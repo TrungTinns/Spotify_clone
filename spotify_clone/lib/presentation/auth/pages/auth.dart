@@ -6,6 +6,8 @@ import 'package:spotify_clone/common/widgets/button/basic_btn.dart';
 import 'package:spotify_clone/core/assets/app_images.dart';
 import 'package:spotify_clone/core/assets/app_vectors.dart';
 import 'package:spotify_clone/core/theme/app_colors.dart';
+import 'package:spotify_clone/presentation/auth/pages/signin.dart';
+import 'package:spotify_clone/presentation/auth/pages/signup.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});
@@ -54,19 +56,18 @@ class AuthPage extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   const SizedBox(height: 30),
-
                   Row(
                     children: [
                       Expanded(
                         flex: 1,
                         child: BasicButton(
                           onPressed: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (BuildContext context) => SignupPage(),
-                            //   ),
-                            // );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => SignupPage(),
+                              ),
+                            );
                           },
                           title: 'Register',
                         ),
@@ -76,17 +77,17 @@ class AuthPage extends StatelessWidget {
                         flex: 1,
                         child: TextButton(
                           style: ButtonStyle(
-                            overlayColor: MaterialStateProperty.all(
+                            overlayColor: WidgetStateProperty.all(
                               Colors.transparent,
                             ),
                           ),
                           onPressed: () {
-                            // Navigator.push(
-                            //   context,
-                            //   MaterialPageRoute(
-                            //     builder: (BuildContext context) => SigninPage(),
-                            //   ),
-                            // );
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (BuildContext context) => SigninPage(),
+                              ),
+                            );
                           },
                           child: Text(
                             'Sign in',

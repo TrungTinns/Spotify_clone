@@ -18,6 +18,7 @@ class BasicButton extends StatelessWidget {
       onPressed: onPressed,
       child: Text(title, style: TextStyle(color: AppColors.lightBg)),
       style: ElevatedButton.styleFrom(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(30)),
         minimumSize: Size.fromHeight(height ?? 80),
       ),
     );

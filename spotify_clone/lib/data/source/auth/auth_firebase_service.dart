@@ -1,16 +1,32 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:spotify_clone/data/models/auth/create_user_req.dart';
+import 'package:spotify_clone/data/models/auth/signin_user_req.dart';
 
 abstract class AuthFirebaseService {
-  Future<void> signIn();
+  Future<Either> signIn(SigninUserReq signinUserReq);
   Future<Either> signUp(CreateUserReq createUserReq);
 }
 
 class AuthFirebaseServiceImpl extends AuthFirebaseService {
   @override
-  Future<void> signIn() async {
-    throw UnimplementedError();
+  Future<Either> signIn(SigninUserReq signinUserReq) async {
+    try {
+      await FirebaseAuth.instance.signInWithEmailAndPassword(
+        email: signinUserReq.email,
+        password: signinUserReq.password,
+      );
+      return Right('Signin successfully');
+    } on FirebaseAuthException catch (e) {
+      String message = '';
+
+      if (e.code == 'invalid-email') {
+        message = 'User can not found';
+      } else if (e.code == 'invalid-credential') {
+        message = 'Password is wrong';
+      }
+      return Left(message);
+    }
   }
 
   @override

@@ -3,6 +3,12 @@
         android:label="spotify_clone"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        
+        <!-- Disable Impeller to prevent emulator crashes -->
+        <meta-data
+            android:name="io.flutter.embedding.android.EnableImpeller"
+            android:value="false" />
+
         <activity
             android:name=".MainActivity"
             android:exported="true"

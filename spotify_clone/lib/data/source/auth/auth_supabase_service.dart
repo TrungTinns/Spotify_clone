@@ -1,23 +1,29 @@
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:spotify_clone/data/models/auth/create_user_req.dart';
 import 'package:spotify_clone/data/models/auth/signin_user_req.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-abstract class AuthFirebaseService {
+abstract class AuthSupabaseService {
   Future<Either> signIn(SigninUserReq signinUserReq);
   Future<Either> signUp(CreateUserReq createUserReq);
 }
 
-class AuthFirebaseServiceImpl extends AuthFirebaseService {
+class AuthSupabaseServiceImpl extends AuthSupabaseService {
+  final SupabaseClient _supabaseClient;
+
+  AuthSupabaseServiceImpl({required SupabaseClient supabaseClient})
+    : _supabaseClient = supabaseClient;
+
   @override
   Future<Either> signIn(SigninUserReq signinUserReq) async {
     try {
-      await FirebaseAuth.instance.signInWithEmailAndPassword(
+      await _supabaseClient.auth.signInWithPassword(
         email: signinUserReq.email,
         password: signinUserReq.password,
       );
+
       return Right('Signin successfully');
-    } on FirebaseAuthException catch (e) {
+    } on AuthException catch (e) {
       String message = '';
 
       if (e.code == 'invalid-email') {
@@ -32,12 +38,16 @@ class AuthFirebaseServiceImpl extends AuthFirebaseService {
   @override
   Future<Either> signUp(CreateUserReq createUserReq) async {
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(
+      final data = await _supabaseClient.auth.signUp(
         email: createUserReq.email,
         password: createUserReq.password,
       );
+      await _supabaseClient
+          .from('users')
+          .update({'name': createUserReq.fullName, 'email': data.user?.email})
+          .eq('id', _supabaseClient.auth.currentUser!.id);
       return Right('Signup successfully');
-    } on FirebaseAuthException catch (e) {
+    } on AuthException catch (e) {
       String message = '';
 
       if (e.code == 'weak-password') {

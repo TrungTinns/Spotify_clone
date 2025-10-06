@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:spotify_clone/common/widgets/button/basic_Btn.dart';
-import 'package:spotify_clone/core/assets/app_images.dart';
-import 'package:spotify_clone/core/assets/app_vectors.dart';
-import 'package:spotify_clone/core/theme/app_colors.dart';
-import 'package:spotify_clone/presentation/choose_mode/pages/choose_mode.dart';
+import '../../../common/widgets/button/basic_btn.dart';
+import '../../../core/assets/app_images.dart';
+import '../../../core/assets/app_vectors.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../choose_mode/pages/choose_mode_page.dart';
 
 class GetStartedPage extends StatelessWidget {
   const GetStartedPage({super.key});

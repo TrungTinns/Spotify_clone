@@ -2,12 +2,12 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:spotify_clone/common/widgets/button/basic_Btn.dart';
-import 'package:spotify_clone/core/assets/app_images.dart';
-import 'package:spotify_clone/core/assets/app_vectors.dart';
-import 'package:spotify_clone/core/theme/app_colors.dart';
-import 'package:spotify_clone/presentation/auth/pages/auth.dart';
-import 'package:spotify_clone/presentation/choose_mode/bloc/theme_cubit.dart';
+import '../../../common/widgets/button/basic_btn.dart';
+import '../../../core/assets/app_images.dart';
+import '../../../core/assets/app_vectors.dart';
+import '../../../core/theme/app_colors.dart';
+import '../../auth/pages/auth_page.dart';
+import '../bloc/theme_cubit.dart';
 
 class ChooseModePage extends StatelessWidget {
   const ChooseModePage({super.key});

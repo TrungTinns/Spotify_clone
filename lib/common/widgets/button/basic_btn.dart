@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_clone/core/theme/app_colors.dart';
+import '../../../core/theme/app_colors.dart';
 
 class BasicButton extends StatelessWidget {
   final VoidCallback onPressed;

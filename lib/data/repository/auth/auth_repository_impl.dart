@@ -1,9 +1,8 @@
 import 'package:dartz/dartz.dart';
-import 'package:spotify_clone/data/models/auth/create_user_req.dart';
-import 'package:spotify_clone/data/models/auth/signin_user_req.dart';
-
-import '../../../domain/repository/auth.dart';
+import '../../../domain/repository/auth/auth_repository.dart';
 import '../../../service_locator.dart';
+import '../../models/auth/create_user_req.dart';
+import '../../models/auth/signin_user_req.dart';
 import '../../source/auth/auth_supabase_service.dart';
 
 class AuthRepositoryImpl extends AuthRepository {

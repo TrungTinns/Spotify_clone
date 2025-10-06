@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../../../presentation/auth/pages/signup.dart';
+import 'signup_page.dart';
 import '../../../common/widgets/appbar/basic_appbar.dart';
 import '../../../common/widgets/button/basic_btn.dart';
 import '../../../common/widgets/textfield/basic_textfield.dart';
 import '../../../core/assets/app_vectors.dart';
 import '../../../data/models/auth/signin_user_req.dart';
-import '../../../domain/usecases/auth/signin.dart';
+import '../../../domain/usecases/auth/signin_uc.dart';
 import '../../../service_locator.dart';
-import '../../root/pages/root.dart';
+import '../../home/pages/home_page.dart';
 
 class SigninPage extends StatelessWidget {
   SigninPage({super.key});
@@ -65,7 +65,7 @@ class SigninPage extends StatelessWidget {
                     Navigator.pushAndRemoveUntil(
                       context,
                       MaterialPageRoute(
-                        builder: (BuildContext context) => const RootPage(),
+                        builder: (BuildContext context) => const HomePage(),
                       ),
                       (route) => false,
                     );

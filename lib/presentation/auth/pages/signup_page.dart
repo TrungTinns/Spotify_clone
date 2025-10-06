@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:spotify_clone/common/widgets/appbar/basic_appbar.dart';
-import 'package:spotify_clone/common/widgets/button/basic_btn.dart';
-import 'package:spotify_clone/common/widgets/textfield/basic_textfield.dart';
-import 'package:spotify_clone/core/assets/app_vectors.dart';
-import 'package:spotify_clone/domain/usecases/auth/signup.dart';
-import 'package:spotify_clone/presentation/auth/pages/signin.dart';
-
+import 'package:flutter_svg/svg.dart';
+import 'package:spotify_clone/presentation/auth/pages/signin_page.dart';
+import '../../../common/widgets/appbar/basic_appbar.dart';
+import '../../../common/widgets/button/basic_btn.dart';
+import '../../../common/widgets/textfield/basic_textfield.dart';
+import '../../../core/assets/app_vectors.dart';
 import '../../../data/models/auth/create_user_req.dart';
+import '../../../domain/usecases/auth/signup_uc.dart';
 import '../../../service_locator.dart';
 
 class SignupPage extends StatelessWidget {

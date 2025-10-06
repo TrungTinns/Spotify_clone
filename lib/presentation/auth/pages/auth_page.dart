@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:spotify_clone/common/helpers/is_dark_mode.dart';
-import 'package:spotify_clone/common/widgets/appbar/basic_appbar.dart';
-import 'package:spotify_clone/common/widgets/button/basic_btn.dart';
-import 'package:spotify_clone/core/assets/app_images.dart';
-import 'package:spotify_clone/core/assets/app_vectors.dart';
-import 'package:spotify_clone/core/theme/app_colors.dart';
-import 'package:spotify_clone/presentation/auth/pages/signin.dart';
-import 'package:spotify_clone/presentation/auth/pages/signup.dart';
+import 'package:spotify_clone/presentation/auth/pages/signin_page.dart';
+import 'package:spotify_clone/presentation/auth/pages/signup_page.dart';
+import '../../../common/widgets/appbar/basic_appbar.dart';
+import '../../../common/widgets/button/basic_btn.dart';
+import '../../../core/assets/app_images.dart';
+import '../../../core/assets/app_vectors.dart';
+import '../../../core/theme/app_colors.dart';
 
 class AuthPage extends StatelessWidget {
   const AuthPage({super.key});

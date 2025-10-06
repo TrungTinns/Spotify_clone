@@ -5,7 +5,7 @@ import 'package:hydrated_bloc/hydrated_bloc.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:spotify_clone/core/theme/app_theme.dart';
 import 'package:spotify_clone/presentation/choose_mode/bloc/theme_cubit.dart';
-import 'package:spotify_clone/presentation/splash/pages/splash.dart';
+import 'package:spotify_clone/presentation/splash/pages/splash_page.dart';
 import 'package:spotify_clone/service_locator.dart';
 
 void main() async {
